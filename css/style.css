@@ -1,0 +1,62 @@
+.window{
+    width: 800px;
+    height: 600px;
+    border: 1px solid black;
+}
+.title{
+    color: white;
+    background-color:  black;
+    text-align: center;
+}
+.leftbox{
+    display: inline-block;
+}
+.right_box{
+    border: 1px solid black;
+    display: inline block;
+    float: right;
+    width: 25%;
+}
+.values{
+    background-color: black;
+    color: white;
+    text-align:center;
+}
+.controls{
+    background-color: black;
+    color: white;
+    text-align:center;
+}
+h2{
+    margin: 1px;
+}
+h1{
+    margin: 0%;
+}
+.len{
+    padding-bottom: 120%;
+    margin-left: 10%;
+}
+.start{
+    padding-bottom: 70%;
+    margin-left: 10%;
+
+}
+.len input{
+    width:60Px;
+}
+.result{
+    display: inline block;
+    background-color: black;
+    color: white;
+    padding-right: 0%;
+    width: 30%;
+    text-align: center;
+}
+.bottom{
+    margin-top: 373px;
+}
+.time{
+    border-top: 1px dashed black;
+    width: 597px;
+}
