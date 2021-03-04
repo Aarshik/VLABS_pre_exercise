@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
   <title>SIMPLE PENDULUM</title>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
@@ -10,14 +9,17 @@
 <body>
 <div class="window">
     <div class= "title">
-        <h1>SIMPLE PENDULUM</h1>
+        <h1>SIMPLE PENDULUM</h1>  
     </div>
     <div class="leftbox">
-        <div>
-           <p>pendulum</p>
-        </div>
-        <div>
-            <p>graph</p>
+        <!--Pendulum Animation-->
+       <div class="base">   
+            <div class="holder"></div>
+                <div class="thread">
+                <div class="knob"></div>
+                <div class="pendulum"></div>
+            </div>
+               
         </div>
     </div>
     <div class="right_box">
@@ -32,8 +34,8 @@
         </div>
         <div class="start">
             <p>
-               <button type="button" onclick="getValue()">Start</button>
-               <button type="button">Stop</button>
+               <button id="start_button" type="button" onclick="getValue();start_pendulum();">Start</button>
+               <button id="stop_button" type="button" >Stop</button>
             </p>
         </div>
     </div>
@@ -42,12 +44,12 @@
         <h2>RESULT</h2>
         </div>
           <div class="time">
-              <p>
-                 Time period(T):<br>
-
-                 Natural frequency(rad/s):<br>
-                 
-                 Natural frequency(Hz):<br>
+            <p>
+                Time period(T):<h4 id='time_period'></h4>
+                <br>
+                Natural frequency(rad/s):<h4 id='freq_rad'></h4>
+                <br>
+                Natural frequency(Hz):<h4 id='freq_hz'></h4><br>
              </p>
            </div>
         </div>

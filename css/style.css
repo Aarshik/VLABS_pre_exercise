@@ -1,6 +1,7 @@
+/*Layout styling*/
 .window{
     width: 800px;
-    height: 600px;
+    height: 900px;
     border: 1px solid black;
 }
 .title{
@@ -10,6 +11,7 @@
 }
 .leftbox{
     display: inline-block;
+    padding-left: 197px;
 }
 .right_box{
     border: 1px solid black;
@@ -54,9 +56,80 @@ h1{
     text-align: center;
 }
 .bottom{
-    margin-top: 373px;
+    margin-top: 276px;
 }
 .time{
     border-top: 1px dashed black;
     width: 597px;
 }
+.base {
+    width: 200px;
+    border-top: 5px solid gray;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    padding: 0 0 30px;
+  }
+  
+  .holder {
+    width: 30px;
+    height: 20px;
+    background: black;
+    margin: auto;
+    border-radius: 0 0 50% 50%;
+  }
+  
+  .thread {
+    display: inline-block;
+    width: 2px;
+    height: 200px;
+    background: black;
+    border-radius: 5px;
+    position: relative;
+    /*transform-origin: 50% 0;
+    animation: swing  2.5s ease-in-out infinite;
+    */
+  }
+  
+  .thread:after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgb(56, 56, 56);
+    border: 2px solid white;
+    top: -4.5px;
+    left: -3.5px;
+  }
+  
+  .knob {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: -18px;
+    left: -4.5px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    border-bottom: 2px solid transparent;
+  }
+  /*Penadulum Bob*/
+  .pendulum {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at 70% 35%, white, #6a6d69 30%, #000000 50%);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -10px;
+    left: -9px;
+  }
+
+/*Pendulum Swing Animation*/
+ @keyframes swing {
+    0%, 100% {
+      transform: rotate(45deg);
+    }
+    50% {
+      transform: rotate(-45deg);
+    }
+  }  
