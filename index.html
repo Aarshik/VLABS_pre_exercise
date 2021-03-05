@@ -1,58 +1,80 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
 <head>
-  <title>SIMPLE PENDULUM</title>
-  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="./js/main.js"></script>
+    <meta charset="utf-8">
+    <title>NITK</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
-<body>
-<div class="window">
-    <div class= "title">
-        <h1>SIMPLE PENDULUM</h1>  
-    </div>
-    <div class="leftbox">
-        <!--Pendulum Animation-->
-       <div class="base">   
-            <div class="holder"></div>
-                <div class="thread">
-                <div class="knob"></div>
-                <div class="pendulum"></div>
+
+<body onload="init()">
+
+    <!-- Whole stmiulation window  800px*600px-->
+    <div class="stimulation_window">
+        <h1 id="thread_">SIMPLE PENDULUM</h1>
+
+        <!-- Display the pendulum,graph and the results -->
+        <div class="display_box">
+            <div class="pendulum_box">
+                <!-- html for the pendulum animation -->
+                <h1>SIMULATION & GRAPH</h1>
+                <div class="base">
+                    <div class="holder"></div>
+                    <div id="thread">
+                        <div class="knob"></div>
+                        <div class="pendulum"></div>
+                    </div>
+                    <div id="shadow"></div>
+                </div>
+                <!-- html for the input responsive output graph -->
+                <div class="graph">
+                    <div class="scale">
+                        <h2>Graph Scale:</h2>
+                        <h2>Y-axis:Amplitude(mm)</h2>
+                        <h2>X-axis:Time(s)</h2>
+                    </div>
+                    <div class="plot">
+                        <canvas id="canvas" width="270" height="150"></canvas>
+                    </div>
+                </div>
             </div>
-               
+
+            <!-- displaying the results  -->
+            <div class="result_box">
+                <h1>RESULT</h1>
+                <h2 id="time_period">Time Period(T):</h2>
+                <h2 id="natural_f_Hz">Natural Frequncy(Hz):</h2>
+                <h2 id="natural_f_rad">Natural Frequency(rad/sec):</h2>
+            </div>
         </div>
+
+        <!-- User's input column  -->
+        <div class="input_box">
+
+            <!-- For varying the length of the pendulum and display the parameters needed -->
+            <div class="variable_box">
+                <h1>VARIABLE</h1>
+                <h2>Length(mm)</h2>
+                <input type="number" id="length" value="100" min="100" max="200" onchange="myFunction()">
+                <div class="variables_confirmation">
+                    <h2 id="len">Length:</h2>
+                    <h2 id="max_amp">Maximum amplitude(mm):</h2>
+                    <h2>Value of g: 9.8m/s<sup>2</sup></h2>
+                </div>
+            </div>
+
+            <!-- Controling the animation box -->
+            <div class="control_box">
+                <h1>CONTROL</h1>
+                <button id="start_button" type="button" name="button" onclick="start()">Start</button>
+                <button id="stop_botton" type="button" name="button" onclick="stop()">Stop</button>
+            </div>
+        </div>
+
     </div>
-    <div class="right_box">
-        <div class="values">
-            <h2>VARIABLES</h2>
-        </div>
-        <div class="len">
-            <p>Length(mm)<br><input type="number" id="len-input" value=""></p>
-        </div>
-        <div class="controls">
-            <h2>CONTROLS</h2>
-        </div>
-        <div class="start">
-            <p>
-               <button id="start_button" type="button" onclick="getValue();start_pendulum();">Start</button>
-               <button id="stop_button" type="button" >Stop</button>
-            </p>
-        </div>
-    </div>
-    <div class="bottom">
-        <div class="result">
-        <h2>RESULT</h2>
-        </div>
-          <div class="time">
-            <p>
-                Time period(T):<h4 id='time_period'></h4>
-                <br>
-                Natural frequency(rad/s):<h4 id='freq_rad'></h4>
-                <br>
-                Natural frequency(Hz):<h4 id='freq_hz'></h4><br>
-             </p>
-           </div>
-        </div>
-    </div>
+    <script src="js/main.js" charset="utf-8">
+    </script>
 </body>
+
 </html>
